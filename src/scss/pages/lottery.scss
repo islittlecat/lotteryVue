@@ -1,0 +1,756 @@
+$imgPath : '../../src/images/';
+
+*{
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+input[type="text"],input[type="number"] {
+  -webkit-appearance: none;
+}
+textarea{
+  -webkit-appearance: none;
+}
+
+body, html {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.img-responsive {
+  display: block;
+  width: auto;
+  max-width: 100%;
+}
+
+.container-award {
+  height: 100%;
+  //background: url($imgPath + 'lottery-elements-bg.jpg') no-repeat center/cover;
+}
+
+.container-wrap-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffe433;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.award-list-wrap {
+  height: 100%;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+.container-wrap-bg > img {
+  margin-top: -128px;
+}
+
+.container-wrap {
+  position: relative;
+  height: 100%;
+}
+
+.award-count {
+  position: relative;
+  font-size: 32px;
+  top: (278-128)+px;
+  color: #000000;
+  width: 344px;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+.award-count .number {
+  margin: 0 10px;
+  font-size: 38px;
+  color: #ff516d;
+}
+
+.award-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  width: 560px;
+  height: 560px;
+  margin: (366-128)+px auto 120px;
+  padding: 15px 10px 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.award-list .award-item {
+  position: relative;
+  width: 172px;
+  height: 172px;
+  padding: 6px;
+  //background: url($imgPath + 'award-item-bg.png') no-repeat center/cover;
+  box-sizing: border-box;
+  &:nth-child(odd) {
+    .award-item-draw {
+      background-color: #ff798f;
+    }
+  }
+  &:nth-child(even) {
+    .award-item-draw {
+      background-color: #fd983e;
+    }
+  }
+  img {
+    width: 100px;
+    margin: 10px auto 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  .award-item-thumbnail {
+    display: block;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    background-color: #fff;
+  }
+  .award-item-text {
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 0;
+    padding: 0 8px;
+    text-align: center;
+    font-size: 24px;
+    line-height: (36/24);
+    height: 36px;
+    color: #000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .award-item-draw {
+    img {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.flip-list-move {
+  transition: transform .5s;
+}
+
+label.error {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 24px;
+  line-height: 1.4;
+  color: red;
+}
+
+//modal
+.text-center {
+  text-align: center;
+}
+
+.btn-shuffle-box {
+  position: relative;
+  z-index: 100;
+}
+
+.fail-cry, .complete-smile {
+  width: 185px;
+  height: 185px;
+  margin: 40px auto 36px;
+}
+
+.left-award-text, .award-tip {
+  margin-bottom: 0;
+  font-size: 32px;
+  color: #000;
+  line-height: (54/32);
+}
+
+.modal-award-count {
+  font-size: 40px;
+  color: #ff516d;
+}
+
+.btn-awarding, .btn-get-award, .btn-save, .btn-shuffle {
+  display: inline-block;
+  width: 250px;
+  height: 88px;
+  font-size: 34px;
+  line-height: (88/34);
+  color: #fff;
+  border: 0;
+  border-radius: 44px;
+  background-image: linear-gradient(to left, #ff8d43, #ff4774);
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.btn-awarding+.btn-get-award {
+  margin-left: 10px;
+}
+
+.lottery-number-smile {
+  padding-top: 40px;
+  margin-top: 60px;
+}
+
+.award-pic {
+  width: 160px;
+  height: 160px;
+  margin: 30px auto 10px;
+}
+
+.award-name {
+  font-size: 32px;
+  color: #ff516d;
+}
+
+.product-img {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 30px;
+}
+
+.get-award-tip {
+  font-size: 32px;
+  line-height: (54/32);
+}
+
+.award-info-area {
+  height: 400px;
+}
+
+.award-number-tip {
+  margin: 0 0 15px 0;
+  font-size: 32px;
+  line-height: (54/32);
+  color: #000;
+  text-align: center;
+}
+
+.modal-address .award-number-tip{
+
+}
+
+.adr-tip {
+  line-height: (50/28);
+  font-size: 28px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.area-list {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.area-list .area-item {
+  width: 30%;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  height: 60px;
+  line-height: (38/28);
+  font-size: 28px;
+  color: #666;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.form-group {
+  margin-bottom: 28px;
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.control-label {
+  line-height: (60/28);
+  font-size: 28px;
+  width: 130px;
+  text-align: left;
+  float: left;
+}
+
+.form-controls {
+  margin-left: 130px;
+}
+
+.form-link-adr {
+  .control-label {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+  .form-controls {
+    margin-left: 0;
+  }
+}
+
+.modal-award {
+  .award-info-area {
+    height: 740px;
+    overflow: scroll;
+    overflow-scrolling: touch;
+  }
+  .area-list {
+    margin-bottom: 10px;
+  }
+}
+
+.area-title {
+  color: #000;
+  font-size: 28px;
+  line-height: (50/28);
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+
+.area-tip {
+  color: #666;
+}
+
+.address-list {
+  .address-item {
+    margin-bottom: 40px;
+    .mall-name {
+      color: #000;
+      font-size: 28px;
+      line-height: (36/28);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .mall-address {
+      color: #666;
+      font-size: 26px;
+      line-height: (40/26);
+    }
+  }
+}
+
+.light {
+  position: absolute;
+  left: 56px;
+  top: (380-128)+ px;
+  width: 629px;
+}
+
+//循环生产动画
+@mixin iterationMove() {
+  .award-list .award-item {
+    transition: transform 0.15s linear;
+  }
+  @for $i from 1 through 9 {
+    .award-item-move#{$i} {
+      @if $i != 5 {
+        z-index: $i+1000;
+      }
+    }
+    .award-item-move#{$i}.move {
+      @if $i == 1 {
+        transform: translate(185px, 182px);
+      }
+      @if $i == 2 {
+        transform: translate(0, 182px);
+      }
+      @if $i == 3 {
+        transform: translate(-185px, 182px);
+      }
+      @if $i == 4 {
+        transform: translate(185px, 0);
+      }
+      //@if $i == 5 {
+      //  transform: translate(0, 182px);
+      //}
+      @if $i == 6 {
+        transform: translate(-185px, 0);
+      }
+      @if $i == 7 {
+        transform: translate(185px, -182px);
+      }
+      @if $i == 8 {
+        transform: translate(0, -182px);
+      }
+      @if $i == 9 {
+        transform: translate(-185px, -182px);
+      }
+
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.6;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+.light-yellow {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: .5s;
+}
+
+.light-pink {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: .5s;
+  animation-delay: .15s;
+}
+
+.flip {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateX(0); /* Needed to work around an iOS 3.1 bug that causes listview thumbs to disappear when -webkit-visibility:hidden is used. */
+  backface-visibility: hidden;
+  transform: translateX(0);
+}
+
+.flip-enter-active {
+  -webkit-animation-name: flipintoright;
+  -webkit-animation-duration: 225ms;
+  animation-name: flipintoright;
+  animation-duration: 225ms;
+}
+
+.flip-leave-active {
+  -webkit-transform: rotateY(-90deg) scale(.9);
+  -webkit-animation-name: flipouttoleft;
+  -webkit-animation-duration: 175ms;
+  transform: rotateY(-90deg) scale(.9);
+  animation-name: flipouttoleft;
+  animation-duration: 175ms;
+}
+
+@-webkit-keyframes flipouttoleft {
+  from {
+    -webkit-transform: rotateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(-90deg) scale(.9);
+  }
+}
+
+@keyframes flipouttoleft {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-90deg) scale(.9);
+  }
+}
+
+@-webkit-keyframes flipouttoright {
+  from {
+    -webkit-transform: rotateY(0);
+  }
+  to {
+    -webkit-transform: rotateY(90deg) scale(.9);
+  }
+}
+
+@keyframes flipouttoright {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(90deg) scale(.9);
+  }
+}
+
+@-webkit-keyframes flipintoleft {
+  from {
+    -webkit-transform: rotateY(-90deg) scale(.9);
+  }
+  to {
+    -webkit-transform: rotateY(0);
+  }
+}
+
+@keyframes flipintoleft {
+  from {
+    transform: rotateY(-90deg) scale(.9);
+  }
+  to {
+    transform: rotateY(0);
+  }
+}
+
+@-webkit-keyframes flipintoright {
+  from {
+    -webkit-transform: rotateY(90deg) scale(.9);
+  }
+  to {
+    -webkit-transform: rotateY(0);
+  }
+}
+
+@keyframes flipintoright {
+  from {
+    transform: rotateY(90deg) scale(.9);
+  }
+  to {
+    transform: rotateY(0);
+  }
+}
+
+//modal
+
+.modal-container.modal-dialog-alert {
+  max-width: 450px;
+  min-height: 60px;
+  margin: 0 auto;
+}
+
+.modal-dialog-alert {
+  .modal-body {
+    min-height: unset;
+  }
+}
+
+.modal-state {
+  text-align: center;
+  > img {
+    width: 60px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+  > span {
+    line-height: (60/24);
+    font-size: 24px;
+    vertical-align: top;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  z-index: 1000;
+}
+
+.modal-header {
+  position: relative;
+  height: 44px;
+}
+
+.modal-container {
+  width: auto;
+  max-width: 592px;
+  min-height: 668px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.btn-modal-close {
+  position: absolute;
+  right: -54px;
+  top: -54px;
+  width: 88px;
+  height: 88px;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.modal-footer {
+  height: 88px;
+  margin-bottom: 30px;
+}
+
+.modal-address .modal-footer,.modal-award .modal-footer{
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  min-height: 450px;
+  //margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+//loading
+@-webkit-keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: rotate-forever;
+  -moz-animation-name: rotate-forever;
+  animation-name: rotate-forever;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+  height: 40px;
+  width: 40px;
+  border: 10px solid #ff516d;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 440px;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -30px;
+}
