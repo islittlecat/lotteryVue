@@ -13,7 +13,7 @@ export default {
   beforeMount(){
     $.ajax({
       type: 'GET',
-      url: '/api/lotteryList'
+      url: '/api/login/getAccount'
     })
   }
 }

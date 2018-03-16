@@ -1,11 +1,21 @@
-const express = require('express')
-const router = express.Router()
-const MongoClient = require('/mongodb');
-const url = 'mongodb://localhost:27017';
 
-router.get('/lotteryList', function (req, res, next) {
-  MongoClient.connect(url, function (err, db) {
-    const dbo = db.db("test");
-    const sss = dbo.lottery_list.find();
-  })
-})
+const models = require('../../db');
+const express = require('express');
+const router = express.Router();
+
+
+// 获取已有账号接口
+router.get('/api/login/getAccount',(req,res) => {
+  console.log(req)
+  //查找数据库
+  models.Login.find((err,data) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(data);
+    }
+    console.log(models)
+  });
+});
+
+module.exports = router;
