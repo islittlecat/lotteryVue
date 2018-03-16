@@ -9,7 +9,13 @@
 
 
 export default {
-  name: 'App'
+  name: 'App',
+  beforeMount(){
+    $.ajax({
+      type: 'GET',
+      url: '/api/lotteryList'
+    })
+  }
 }
 </script>
 
